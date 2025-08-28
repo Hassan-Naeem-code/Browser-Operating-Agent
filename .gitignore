@@ -1,0 +1,11 @@
+__pycache__/
+.vscode/
+.env
+.venv/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+block_champ_drag_*.png
+block_champ_canvas_*.png
+block_champ_screenshot.png
