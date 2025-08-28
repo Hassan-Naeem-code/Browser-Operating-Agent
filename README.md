@@ -43,6 +43,3 @@ BrowserOperatingAgent/
 - The agent currently performs random drag-and-drop moves. Board analysis is basic and can be improved for smarter gameplay.
 - Screenshots and canvas images are saved after each move for debugging and analysis in the `game_screenshot/` folder.
 - The browser closes automatically after the script finishes. To keep it open, comment out the browser close line or add a sleep at the end of the script.
-
-## License
-MIT
