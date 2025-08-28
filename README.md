@@ -1,47 +1,48 @@
 # Browser Operating Agent
 
 ## Overview
-This project is an autonomous browser agent built with Python and Playwright. It operates on the Block Champ puzzle game, automating gameplay and analyzing the board using image processing (Pillow).
+ 
+# Browser Operating Agent
+
+This project is a browser automation agent that operates its own browser, designed to automate and analyze the Block Champ game on CrazyGames.
 
 ## Features
-- Launches and controls a browser instance
-- Navigates to Block Champ on CrazyGames
-- Automates drag-and-drop block moves
-- Captures and analyzes the game board using screenshots
-- Uses image processing to detect filled/empty cells
-- Extensible for intelligent gameplay and decision logic
+- Launches a Chromium browser and navigates to Block Champ
+- Detects nested iframes and game canvas
+- Automates drag-and-drop moves with smooth motion
+- Captures screenshots and analyzes the board using Pillow
+- Extensible for smarter move logic
+
+## Setup
+1. Clone the repository
+2. Create a virtual environment and activate it
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the agent:
+   ```bash
+   python -m browser_agent.main
+   ```
 
 ## Project Structure
-- `main.py`: Main agent logic and board analysis
-- `.gitignore`: Excludes Python, VS Code, and image files
-- `README.md`: Project documentation and usage
+```
+BrowserOperatingAgent/
+├── browser_agent/
+│   ├── __init__.py
+│   └── main.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── tests/
+    └── test_agent.py
+```
 
-## Getting Started
-1. Ensure Python 3.12+ is installed.
-2. Install dependencies:
-   ```bash
-   pip install playwright Pillow
-   python -m playwright install
-   ```
-3. Run the agent:
-   ```bash
-   python main.py
-   ```
 
-## How It Works
-1. The agent launches a browser and navigates to Block Champ.
-2. It locates the game canvas inside nested iframes.
-3. Performs automated drag-and-drop moves on the board.
-4. Captures screenshots and analyzes the board using Pillow.
-5. Prints board state (filled/empty cells) after each move.
+## Notes
+- The agent currently performs random drag-and-drop moves. Board analysis is basic and can be improved for smarter gameplay.
+- Screenshots and canvas images are saved after each move for debugging and analysis in the `game_screenshot/` folder.
+- The browser closes automatically after the script finishes. To keep it open, comment out the browser close line or add a sleep at the end of the script.
 
-## Customization & Next Steps
-- Adjust the number of moves or drag logic in `main.py`.
-- Improve board analysis for smarter gameplay.
-- Implement decision logic in `choose_best_move`.
-- Integrate advanced image processing for optimal moves.
-
-## Industry-Standard Practices
-- Uses `.gitignore` for Python, VS Code, and generated files
-- Modular code structure with clear separation of logic
-- Extensible for future features and intelligent agents
+## License
+MIT
